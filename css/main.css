@@ -16,6 +16,26 @@ html {
     line-height: 1.4;
 }
 
+header {
+    background-color: black;
+}
+
+body {
+    background: rgba(0, 0, 0, 0) url("../img/body-background.jpg") no-repeat fixed center center / cover ;
+    min-width: 726px;
+    margin: 0;
+}
+
+header > .layout-wrap {
+    height: 40px;
+    margin: 0 15%;
+    padding: 10px;
+}
+.search-box {
+    float: right;
+}
+
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
