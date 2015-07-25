@@ -34,6 +34,32 @@ header > .layout-wrap {
 .search-box {
     float: right;
 }
+.page-body {
+    margin: -16px 13%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.notifications {
+    background-color: #F0F0F0 ;
+    font-size: 13px;
+    line-height: 40px;
+    margin: 16px 20px;
+}
+nav {
+    height: 140px;
+}
+.nav-section {
+    background-color: #000;
+    float: left;
+    width: 31%;
+    margin: 1%;
+
+}
+.nav-section > p {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.5rem;
+}
 
 
 /*
