@@ -46,19 +46,64 @@ header > .layout-wrap {
     margin: 16px 20px;
 }
 nav {
-    height: 140px;
+    height: 145px;
 }
 .nav-section {
     background-color: #000;
     float: left;
     width: 31%;
     margin: 1%;
+    height: inherit;
 
 }
 .nav-section > p {
     color: #FFF;
     text-align: center;
     font-size: 1.5rem;
+}
+.menu {
+    list-style-type: none;
+    background: #F0F0F0;
+}
+nav a {
+    display:block;
+    padding:10px 20px;
+    line-height:16px;
+    color:#000;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: -40px;
+}
+nav a:hover {
+    text-decoration:none;
+}
+nav ul:before, nav ul:after {
+    content:"";
+    display:table;
+}
+nav ul:after {
+    clear:both;
+}
+
+.action-list {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    display: none;
+}
+.action-list li {
+    background-color: #FFF;
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.menu > li {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.menu > li:hover .action-list{
+    display: block;
 }
 
 
