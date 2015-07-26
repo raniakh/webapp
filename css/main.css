@@ -64,6 +64,11 @@ nav {
 .menu {
     list-style-type: none;
     background: #F0F0F0;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 nav a {
     display:block;
@@ -72,7 +77,6 @@ nav a {
     color:#000;
     text-decoration: none;
     font-size: 16px;
-    margin-left: -40px;
 }
 nav a:hover {
     text-decoration:none;
@@ -86,10 +90,12 @@ nav ul:after {
 }
 
 .action-list {
-    position: relative;
-    width: 100%;
     list-style: none;
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
 }
 .action-list li {
     background-color: #FFF;
@@ -97,9 +103,11 @@ nav ul:after {
     float: left;
     position: relative;
 }
-.menu > li {
-    float: left;
+.menu li {
     position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
     width: 100%;
 }
 .menu > li:hover .action-list{
