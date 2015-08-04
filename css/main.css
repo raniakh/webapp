@@ -114,6 +114,27 @@ nav ul:after {
     display: block;
 }
 
+.tabs-list {
+    height: 50px;
+    list-style-type: none;
+    margin-top: 35px;
+    margin-left: -3%;
+}
+.tabs-list li {
+    float: left;
+    width: 22%;
+    background-color: #191919;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 3%;
+}
+.tabs-list a{
+    text-decoration: none;
+    color: #FFF2FF;
+    font-size: 1.1rem;
+}
+
 
 /*
  * Remove text-shadow in selection highlight:
