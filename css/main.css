@@ -197,6 +197,47 @@ nav ul:after {
     top: 64px;
     box-shadow: 0 4px 7px 2px rgba(50, 50, 50, 0.8);
 }
+form {
+    display: block;
+    margin-top: 0;
+}
+.fieldset {
+    background-color: #CCCCCC;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 1% 2%;
+    position: relative;
+    height: 35px;
+}
+.reportnumber {
+    position: absolute;
+    top: 15px;
+}
+.inputreport {
+    position: absolute;
+    height: 35px;
+}
+.reportname {
+    left: 15%;
+    width: 40%
+}
+.reportlabel {
+    position: absolute;
+    top: 21%;
+}
+.reportinput {
+    border:none;
+    height: 28px;
+    position: inherit;
+    left: 14%;
+    padding: 0 10%;
+    top: 14%;
+    font-size: 0.8rem;
+}
+.reporturl {
+    left: 60%;
+    width: 40%;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
