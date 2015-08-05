@@ -109,6 +109,7 @@ nav ul:after {
     margin: 0;
     padding: 0;
     width: 100%;
+    z-index: 100;
 }
 .menu > li:hover .action-list{
     display: block;
@@ -139,10 +140,10 @@ nav ul:after {
     font-size: 1.1rem;
 }
 .active , .active:hover {
-    background-color: #666666 !important;
+    background-color: #808080!important;
 }
 #quick-reports {
-    background-color: #666666;
+    background-color: #808080;
     min-height: 360px;
     position: relative;
     margin-left: 1%;
@@ -156,7 +157,28 @@ nav ul:after {
    position: absolute; 
 }
 .btn-expand {
-    background-image: url("../img/icons/expand.png");
+    background-image: url("../img/expand.png");
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-repeat: no-repeat;
+    right: 50px;
+    top: 20px;
+    background-color: #808080;
+}
+.btn-settings {
+    background-image: url("../img/settings.png");
+    position: absolute;
+    background-repeat: no-repeat;
+    background-color: #808080;
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    border: none;
+}
+.btn-settings:hover {
+    cursor: pointer;
 }
 
 /*
