@@ -238,6 +238,18 @@ form {
     left: 60%;
     width: 40%;
 }
+.save {
+    float: right;
+    font-size: 1.1rem;
+}
+.save input {
+    background-color: black;
+    color: white;
+    border:none;
+    height: 30px;
+    width: 85px;
+    cursor: pointer;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
