@@ -163,15 +163,19 @@ nav ul:after {
     position: absolute;
     background-repeat: no-repeat;
     right: 50px;
-    top: 20px;
+    top: 28px;
     background-color: #808080;
 }
+/*
+.btn-expand:hover {
+    background-color: #FFFFFF;
+}*/
 .btn-settings {
     background-image: url("../img/settings.png");
     position: absolute;
     background-repeat: no-repeat;
     background-color: #808080;
-    top: 16px;
+    top: 24px;
     right: 16px;
     width: 28px;
     height: 28px;
@@ -179,8 +183,20 @@ nav ul:after {
 }
 .btn-settings:hover {
     cursor: pointer;
+ /*   background-color: #FFFFFF; */
 }
-
+.settings {
+    background-color: #FFFFFF;
+    height: 260px;
+    left: 0;
+    margin: 0 0 0 16px;
+    overflow: hidden;
+    padding: 16px;
+    position: absolute;
+    right: 16px;
+    top: 64px;
+    box-shadow: 0 4px 7px 2px rgba(50, 50, 50, 0.8);
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
