@@ -142,7 +142,7 @@ nav ul:after {
 .active , .active:hover {
     background-color: #808080!important;
 }
-#quick-reports {
+#tabs-list_content {
     background-color: #808080;
     min-height: 360px;
     position: relative;

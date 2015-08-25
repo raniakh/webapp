@@ -34,6 +34,34 @@ var UTILS = (function () {
             } else
             obj.removeEventListener( type, handler, false );
         },
+
+        get_hash: function(){
+        if (window.location.hash) {
+            //  Get the hash from URL
+            var url = window.location.hash;
+            //  Remove the #
+            var current_hash = url.substring(1);
+            //  activate tab
+            UTILS.set_tab('tabs', current_hash);
+
+        }
+    },
+
+    set_tab: function(tab_container_id, tab_id){
+        //  Remove class "active" from currently active tab
+        $('#' + tab_container_id + ' ul li a').removeClass('tab-active');
+        $('#' + tab_container_id + ' ul li').removeClass('active');
+ 
+        //  Now add class "active" to the selected/clicked tab
+        $('#' + tab_container_id + ' a[rel="'+tab_id+'"]').addClass("tab-active");
+        $('#'+tab_id).addClass("active");
+ 
+        // hide all tabs
+        $('#' + tab_container_id + '_content .tab').addClass('hidden');
+ 
+        //  Show the selected tab content
+        $('#' + tab_container_id + '_content #' + tab_id).removeClass('hidden');
+    },
     
     };
 }());

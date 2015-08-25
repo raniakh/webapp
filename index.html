@@ -85,22 +85,24 @@
 
 		<section class="tabs">
 			<ul class="tabs-list">
-				<li class="active"><a href="#quick-reports">Quick Reports</a></li>
-				<li><a href="#my-folders">My Folders</a></li>
-				<li><a href="#my-team-folders">My Team Folders</a></li>
-				<li><a href="#public-folders">Public Folders</a></li>
+				<li class="active" id="quick-reports"><a href="#quick-reports" class="tab-active" rel="quick-reports">Quick Reports</a></li>
+				<li class="" id="my-folders"><a href="#my-folders" class="" rel="my-folders">My Folders</a></li>
+				<li class="" id="my-team-folders"><a href="#my-team-folders" class="" rel="my-team-folders">My Team Folders</a></li>
+				<li class="" id="public-folders"><a href="#public-folders" class="" rel="public-folders">Public Folders</a></li>
 			</ul>
 
-			<div id="quick-reports">
+			<div id="tabs-list_content">
+				<div class="reports tab" id="quick-reports">
+				 <div class="reports-options">
 
-				<select class="adresses hidden" name="adresses">
+				<select class="adresses hidden" name="adresses" id="adresses-quickreports">
                 </select>
                 <div class="reports-options-buttons">
                     <a class="btn-expand hidden expand-toleft" target="_blank" href="#" id="expand-quickreports"></a>
                     <button class="btn-settings active" id="btnSettings-quickreports"></button>
                 </div>
-                <div class="settings">
-                	<form runat="server">
+                <div class="settings" id="quickreports-form-settings">
+                	<form class="formSettings" runat="server">
                 		<fieldset class="fieldset">
                 			<span class="reportnumber">Report 01</span>
                 			<div class="inputreport reportname">
@@ -142,6 +144,19 @@
                 		</div>
                 	</form>
                 </div>
+            </div>
+              <!-- div for space -->
+        </div>
+ <!-- I am here -->       
+        <div class="folders tab hidden" id="my-folders">
+        	<div class="reports-options-buttons">
+        		<a class="btn-expand" href="http://www.bbc.com/"></a>
+        	</div>
+        	<div class="folder-content">
+        		<iframe src="http://www.bbc.com/" frameborder="0" class="frame"></iframe>
+        	</div>
+        </div>
+
 
 			</div>
 
