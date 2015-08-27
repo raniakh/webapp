@@ -46,6 +46,11 @@ var UTILS = (function () {
 
         }
     },
+    
+    hideSettings: function($nameid){
+        var $settings = $nameid + '-form-settings';
+        $('#'+settings).toggleClass("hidden");
+    },
 
 
 addSelectToDropDownList : function($selectElement ,name,url){
@@ -173,6 +178,12 @@ $(document).ready(function(){
         var tab_id = $(this).children('a').attr('rel');
         window.location.hash = tab_id ;
         return false;
+    });
+    $('.btn-settings').click(function(e){
+        $nameid = $(this).attr('id');
+        $nameid = $nameid.substring(12);
+       UTILS.hideSettings($nameid);
+
     });
 
 
