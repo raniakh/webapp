@@ -101,7 +101,7 @@ addSelectToDropDownList : function($selectElement ,name,url){
                     UTILS.hideSelectButtonAndIframe($form.attr('id'));
                 }
 
-            UTILS.saveToLocalStorage();
+            UTILS.saveLocalStorage();
 
             return true;
 
@@ -115,6 +115,50 @@ addSelectToDropDownList : function($selectElement ,name,url){
 
     showSelectButtonAndIframe: function(id){
         $('#adresses-' + id + ', .content-' + id + ', #expand-' + id).removeClass('hidden');
+    },
+
+    saveLocalStorage: function(){
+        if (typeof(Storage) != "undefined"){
+            var arr = [];
+            $('.formSettings').each(function(index,value){
+                $inputsName = $(this).find('input[type="text"]');
+                $inputsUrl = $(this).find('input[type="url"]');
+                var formID = $(this).attr('id');
+                for(var i=0; i< $inputsName.length;i++){
+                  var  name = $inputsName.eq(i).val();
+                  var  nameID = $inputsName.eq(i).attr('id');
+                  var  url = $inputsUrl.eq(i).val();
+                  var  urlID = $inputsUrl.eq(i).attr('id');
+
+                    arr.push({
+                        formID : formID
+                        name : name,
+                        url : url,
+                        nameID : nameID,
+                        urlID : urlID;
+                    });
+                }
+               
+            });
+            localStorage.setItem('storage', JSON.stringify(arr);
+        }
+        else{
+            console.log("Sorry, your browser does not support Web Storage");
+        }
+    },
+    loadLocalStorage: function(){
+         if (typeof(Storage) != "undefined"){
+            var storedData = JSON.parse(localStorage.getItem('storage'));
+            if(storedData != null){
+                for (var i=0; i<storedData.length; i++){
+                    $('#'+storedData[i].nameID).val(storedData[i].name);
+                    $('#'+storedData[i].urlID).val(storedData[i].url);
+                }
+            }
+         }
+         else{
+            console.log("Sorry, your browser does not support Web Storage");
+         }
     },
 
 
@@ -133,6 +177,7 @@ addSelectToDropDownList : function($selectElement ,name,url){
         //  Show the selected tab content
         $('#' + tab_container_id + '_content #' + tab_id).removeClass('hidden');
     },
+    
 
     
     };
@@ -175,6 +220,8 @@ $(document).ready(function(){
     $(window).bind('hashchange', function(e){
        UTILS.get_hash(); 
     });
+     UTILS.loadLocalStorage();
+
     $(".tabs-list li").click(function(e){
         var tab_id = $(this).children('a').attr('rel');
         window.location.hash = tab_id ;
@@ -186,6 +233,7 @@ $(document).ready(function(){
        UTILS.hideSettings(nameid);
 
     });
+
 
 
 // GET AJAX NOTIFICATION
