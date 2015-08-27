@@ -131,16 +131,16 @@ addSelectToDropDownList : function($selectElement ,name,url){
                   var  urlID = $inputsUrl.eq(i).attr('id');
 
                     arr.push({
-                        formID : formID
+                        formID : formID,
                         name : name,
                         url : url,
                         nameID : nameID,
-                        urlID : urlID;
+                        urlID : urlID
                     });
                 }
                
             });
-            localStorage.setItem('storage', JSON.stringify(arr);
+            localStorage.setItem('storage', JSON.stringify(arr));
         }
         else{
             console.log("Sorry, your browser does not support Web Storage");
