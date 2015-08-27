@@ -25,7 +25,7 @@
 
 	<section class="page-body layout-wrap">
 
-		<div class="notifications">temporary notification, to be removed from index file</div>
+		<div class="notifications hidden"></div>
 
 		<nav>
 
@@ -103,7 +103,7 @@
                     <button class="btn-settings active" id="btnSettings-quickreports"></button>
                 </div>
                 <div class="settings" id="quickreports-form-settings">
-                	<form class="formSettings" runat="server">
+                	<form class="formSettings" runat="server" id="quickreports">
                 		<fieldset class="fieldset">
                 			<span class="reportnumber">Report 01</span>
                 			<div class="inputreport reportname">
@@ -146,7 +146,9 @@
                 	</form>
                 </div>
             </div>
-              <!-- div for space -->
+              <div class="content-quickreports folder-content">
+                            <iframe class="frame iframe-quickreports" src="" frameborder="0"></iframe>
+                        </div>
         </div>
    
         <div class="folders tab hidden" id="my-folders">
@@ -163,10 +165,10 @@
               <select class="adresses hidden" name="adresses" id="adresses-myteamfolders"> </select>
                 <div class="reports-options-buttons">
                     <a class="btn-expand hidden expand-toleft" target="_blank" href="#" id="expand-myteamfolders"></a>
-                    <button class="btn-settings active" id="btnSettings-myteamfolders"></button>
+                    <button class="btn-settings active" id="btnSettings-my-team-folders"></button>
                 </div>
-                <div class="settings" id="myteamfolders-form-settings">
-                	<form class="formSettings" runat="server">
+                <div class="settings" id="my-team-folders-form-settings">
+                	<form class="formSettings" runat="server" id="myteamfolders">
                 		<fieldset class="fieldset">
                 			<span class="reportnumber">Folder 01</span>
                 			<div class="inputreport reportname">
@@ -210,9 +212,13 @@
                 </div>
 			</div>
 
+             <div class="content-myteamfolders folder-content hidden">
+                            <iframe class="frame iframe-myteamfolders" src="" frameborder="0"></iframe>
+                        </div>
+
 		</div>
 
-		<div class="folders tab hidden" id="my-folders">
+		<div class="folders tab hidden" id="public-folders">
         	<div class="reports-options-buttons">
         		<a class="btn-expand" href="http://www.bbc.com/"></a>
         	</div>
@@ -229,8 +235,8 @@
 	</section>
 
 	<script src="js/main.js"></script>
-	<script src="js/plugins.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 </body>
 </html>

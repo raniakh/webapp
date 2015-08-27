@@ -47,10 +47,75 @@ var UTILS = (function () {
         }
     },
 
+
+addSelectToDropDownList : function($selectElement ,name,url){
+        var $option = $( '<option></option>' );
+        $option.attr( 'value',url );
+        $option.text(name);
+        $selectElement.append($option);
+    },
+
+    submitForm: function(e){
+        e.preventDefault();
+        var $form = $(e.target),
+            $adresses = $( '#adresses-' + $form.attr('id') ).eq(0),
+            $inputsName = $form.find('input[type="text"]'),
+            $inputsUrl = $form.find('input[type="url"]');
+
+            var nameVal , urlVal, emptyCounter = 0;
+            
+            //reset bookmark
+            $adresses.find('option').remove();
+
+            for (var i = 0; i < $inputsName.length; i++) {
+            url = $inputsUrl.eq(i).val();
+            name = $inputsName.eq(i).val();
+            
+
+            // check if not empty and add to bookmark
+            if(name !== '' && url !== '' ){
+                UTILS.addSelectToDropDownList($adresses,name,url);
+            }
+            else{
+                emptyCounter++;
+            }
+
+            }// end for
+
+            // show bookmark - iframe - expand in case emptyCounter is not zero
+                if(emptyCounter != 3){
+
+                    $adresses.focus();
+                    UTILS.setIframe($adresses.children(0).attr('value'), $form.attr('id'));
+                    $('#btnSettings-'+ $form.attr('id')).click();
+                    UTILS.showSelectButtonAndIframe($form.attr('id'));
+                }
+                else{
+                    $adresses.find('option').remove();
+                    UTILS.hideSelectButtonAndIframe($form.attr('id'));
+                }
+
+            UTILS.saveToLocalStorage();
+
+            return true;
+
+
+    },
+
+    setIframe: function(val,id){
+        $('.iframe-'+id).attr( 'src' , val );
+        $('#expand-'+id).attr( 'href', val );
+    },
+
+    showSelectButtonAndIframe: function(id){
+        $('#adresses-' + id + ', .content-' + id + ', #expand-' + id).removeClass('hidden');
+    },
+
+
     set_tab: function(tab_container_id, tab_id){
         //  Remove class "active" from currently active tab
-        $('#' + tab_container_id + 'li a').removeClass('tab-active');
-        $('#' + tab_container_id + 'li').removeClass('active');
+        $('.' + tab_container_id + ' li a').removeClass('tab-active');
+        $('.' + tab_container_id + ' li').removeClass('active');
  
         //  Now add class "active" to the selected/clicked tab
         $('#' + tab_container_id + ' a[rel="'+tab_id+'"]').addClass("tab-active");
@@ -97,6 +162,9 @@ var UTILS = (function () {
 // Place any jQuery/helper plugins in here.
 $(document).ready(function(){
 
+
+    $('.formSettings').submit(UTILS.submitForm);
+
     UTILS.get_hash();
     $(window).bind('hashchange', function(e){
        UTILS.get_hash(); 
@@ -106,4 +174,22 @@ $(document).ready(function(){
         window.location.hash = tab_id ;
         return false;
     });
+
+
+// GET AJAX NOTIFICATION
+    
+        $.ajax({
+
+            url: 'data/notification.json',
+            dataType: "json"
+
+        })
+        .done(function (response) {
+            if (response && response !== '') {
+                $('.notifications').removeClass('hidden');
+                $('.notifications').text(response.notification);
+            }
+        });
+
+
 });
