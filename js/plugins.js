@@ -47,9 +47,10 @@ var UTILS = (function () {
         }
     },
     
-    hideSettings: function($nameid){
-        var $settings = $nameid + '-form-settings';
-        $('#'+settings).toggleClass("hidden");
+    hideSettings: function(nameid){
+      /*  var $settings = $nameid + '-form-settings';*/
+        $('#'+ nameid + '-form-settings').toggleClass("hidden");
+       /* $('#'+$settings.attr('id')).toggleClass("hidden")*/
     },
 
 
@@ -180,9 +181,9 @@ $(document).ready(function(){
         return false;
     });
     $('.btn-settings').click(function(e){
-        $nameid = $(this).attr('id');
-        $nameid = $nameid.substring(12);
-       UTILS.hideSettings($nameid);
+       var nameid = $(this).attr('id');
+        nameid = nameid.substring(12);
+       UTILS.hideSettings(nameid);
 
     });
 
