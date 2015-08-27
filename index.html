@@ -92,6 +92,7 @@
 			</ul>
 
 			<div id="tabs-list_content">
+
 				<div class="reports tab" id="quick-reports">
 				 <div class="reports-options">
 
@@ -147,7 +148,7 @@
             </div>
               <!-- div for space -->
         </div>
- <!-- I am here -->       
+   
         <div class="folders tab hidden" id="my-folders">
         	<div class="reports-options-buttons">
         		<a class="btn-expand" href="http://www.bbc.com/"></a>
@@ -157,20 +158,79 @@
         	</div>
         </div>
 
+        <div class="my-team-folders tab hidden" id="my-team-folders">
+			<div class="reports-options">
+              <select class="adresses hidden" name="adresses" id="adresses-myteamfolders"> </select>
+                <div class="reports-options-buttons">
+                    <a class="btn-expand hidden expand-toleft" target="_blank" href="#" id="expand-myteamfolders"></a>
+                    <button class="btn-settings active" id="btnSettings-myteamfolders"></button>
+                </div>
+                <div class="settings" id="myteamfolders-form-settings">
+                	<form class="formSettings" runat="server">
+                		<fieldset class="fieldset">
+                			<span class="reportnumber">Folder 01</span>
+                			<div class="inputreport reportname">
+                				<label class="reportlabel" for="foldername1">Name</label>
+                				<input class="reportinput" id="foldername1" type="text">
+                			</div>
+                			<div class="inputreport reporturl">
+                				<label class="reportlabel" for="folderurl1">URL</label>
+                				<input class="reportinput urlinput" id="folderurl1" type="url" pattern="https?://.+">
+                			</div>
+                		</fieldset>
 
+                		<fieldset class="fieldset">
+                			<span class="reportnumber">Folder 02</span>
+                			<div class="inputreport reportname">
+                				<label class="reportlabel" for="foldername2">Name</label>
+                				<input class="reportinput" id="foldername2" type="text">
+                			</div>
+                			<div class="inputreport reporturl">
+                				<label class="reportlabel" for="folderurl2">URL</label>
+                				<input class="reportinput urlinput" id="folderurl2" type="url" pattern="https?://.+">
+                			</div>
+                		</fieldset>
+
+                		<fieldset class="fieldset">
+                			<span class="reportnumber">Folder 03</span>
+                			<div class="inputreport reportname">
+                				<label class="reportlabel" for="foldername3">Name</label>
+                				<input class="reportinput" id="foldername3" type="text">
+                			</div>
+                			<div class="inputreport reporturl">
+                				<label class="reportlabel" for="folderurl3">URL</label>
+                				<input class="reportinput urlinput" id="folderurl3" type="url" pattern="https?://.+">
+                			</div>
+                		</fieldset>
+
+                		<div class="save">
+                			<input id="submit" value="Save" type="submit">
+                		</div>
+                	</form>
+                </div>
 			</div>
 
-			<div id="my-folders">
-			</div>
+		</div>
 
-			<div id="my-team-folders">
-			</div>
+		<div class="folders tab hidden" id="my-folders">
+        	<div class="reports-options-buttons">
+        		<a class="btn-expand" href="http://www.bbc.com/"></a>
+        	</div>
+        	<div class="folder-content">
+        		<iframe src="http://www.bbc.com/" frameborder="0" class="frame"></iframe>
+        	</div>
+        </div>
 
-			<div id="public-folders">
-			</div>
+
+	</div>
+
+			
 		</section>
 	</section>
 
 	<script src="js/main.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 </body>
 </html>

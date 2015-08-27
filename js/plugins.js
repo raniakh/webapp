@@ -42,15 +42,15 @@ var UTILS = (function () {
             //  Remove the #
             var current_hash = url.substring(1);
             //  activate tab
-            UTILS.set_tab('tabs', current_hash);
+            UTILS.set_tab('tabs-list', current_hash);
 
         }
     },
 
     set_tab: function(tab_container_id, tab_id){
         //  Remove class "active" from currently active tab
-        $('#' + tab_container_id + ' ul li a').removeClass('tab-active');
-        $('#' + tab_container_id + ' ul li').removeClass('active');
+        $('#' + tab_container_id + 'li a').removeClass('tab-active');
+        $('#' + tab_container_id + 'li').removeClass('active');
  
         //  Now add class "active" to the selected/clicked tab
         $('#' + tab_container_id + ' a[rel="'+tab_id+'"]').addClass("tab-active");
@@ -62,6 +62,7 @@ var UTILS = (function () {
         //  Show the selected tab content
         $('#' + tab_container_id + '_content #' + tab_id).removeClass('hidden');
     },
+
     
     };
 }());
@@ -94,3 +95,15 @@ var UTILS = (function () {
 }());
 
 // Place any jQuery/helper plugins in here.
+$(document).ready(function(){
+
+    UTILS.get_hash();
+    $(window).bind('hashchange', function(e){
+       UTILS.get_hash(); 
+    });
+    $(".tabs-list li").click(function(e){
+        var tab_id = $(this).children('a').attr('rel');
+        window.location.hash = tab_id ;
+        return false;
+    });
+});
