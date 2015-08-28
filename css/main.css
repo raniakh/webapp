@@ -261,6 +261,9 @@ form {
     width: 85px;
     cursor: pointer;
 }
+.alertHighLight{
+    background-color: red;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

@@ -177,9 +177,15 @@ addSelectToDropDownList : function($selectElement ,name,url){
         //  Show the selected tab content
         $('#' + tab_container_id + '_content #' + tab_id).removeClass('hidden');
     },
+// trying
+    validateURL: function(textval){
+        var urlregex = new RegExp(
+        "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
+        if(! urlregex.test(textval) )
+            $("#url"+i).addClass("alertHighLight");
+    },
     
 
-    
     };
 }());
 
@@ -232,6 +238,13 @@ $(document).ready(function(){
         nameid = nameid.substring(12);
        UTILS.hideSettings(nameid);
 
+    });
+    //trying
+    $("#submit").click(function(e){
+        for(var i=0; i< 3 ; i++){
+            $("#url"+i).removeClass("alertHighLight");
+            validateURL(('#url'+i).val());
+        }
     });
 
 
