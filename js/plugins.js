@@ -178,7 +178,7 @@ addSelectToDropDownList : function($selectElement ,name,url){
         $('#' + tab_container_id + '_content #' + tab_id).removeClass('hidden');
     },
 // trying
-    validateURL: function(textval){
+    validateURL: function(textval , i){
         var urlregex = new RegExp(
         "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
         if(! urlregex.test(textval) )
@@ -243,7 +243,7 @@ $(document).ready(function(){
     $("#submit").click(function(e){
         for(var i=0; i< 3 ; i++){
             $("#url"+i).removeClass("alertHighLight");
-            validateURL(('#url'+i).val());
+            validateURL(('#url'+i).val(), i);
         }
     });
 
