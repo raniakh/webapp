@@ -178,13 +178,13 @@ addSelectToDropDownList : function($selectElement ,name,url){
         $('#' + tab_container_id + '_content #' + tab_id).removeClass('hidden');
     },
 // trying
-    validateURL: function(textval , i){
+ /*   validateURL: function(textval , i){
         var urlregex = new RegExp(
         "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
         if(! urlregex.test(textval) )
             $("#url"+i).addClass("alertHighLight");
     },
-    
+    */
 
     };
 }());
@@ -240,12 +240,12 @@ $(document).ready(function(){
 
     });
     //trying
-    $("#submit").click(function(e){
+  /*  $("#submit").click(function(e){
         for(var i=0; i< 3 ; i++){
             $("#url"+i).removeClass("alertHighLight");
             validateURL(('#url'+i).val(), i);
         }
-    });
+    });*/
 
 
 
